@@ -1,0 +1,62 @@
+CREATE TABLE ORDERS_ITEM ( -- 주문 상세번호
+	ORDERS_ITEM_PK INT PRIMARY KEY, -- 주문 상세번호
+	ORDERS_PK INT,  -- 주문번호 FK
+	ITEM_PK INT, -- 상품번호 FK
+	ORDERS_ITEM_QUANTITY INT DEFAULT 0, -- 구매수량
+	ORDERS_ITEM_PRICE INT DEFAULT 0, -- 주문시점 가격
+	CONSTRAINT FK_ORDERS_ORDERS_ITEM FOREIGN KEY (ORDERS_PK) REFERENCES ORDERS(ORDERS_PK),
+	CONSTRAINT FK_ITEM_ORDERS_ITEM FOREIGN KEY (ITEM_PK) REFERENCES ITEM(ITEM_PK)
+);
+
+-- 테이블 드랍
+DROP TABLE ORDERS_ITEM;
+
+-- 테이블 강제 드랍
+DROP TABLE ORDERS_ITEM CASCADE CONSTRAINTS;
+
+-- 시퀀스
+CREATE SEQUENCE ORDERS_ITEM_SEQ
+START WITH 4000
+INCREMENT BY 1
+NOCACHE;
+
+-- 주문상세 생성
+INSERT INTO ORDERS_ITEM (
+    ORDERS_ITEM_PK,    -- PK
+    ORDERS_PK,         -- 주문내역 PK
+    ITEM_PK,           -- 상품 PK
+    ORDERS_ITEM_QUANTITY,  -- 수량
+    ORDERS_ITEM_PRICE      -- 주문 시점 총 가격
+) VALUES (
+    ORDERS_ITEM_SEQ.NEXTVAL,
+    ?,   --:ordersPk,
+    ?,   --:itemPk,
+    ?,   -- :quantity,
+    ?    --:unitPrice * :quantity
+);
+
+
+-- 주문 상세내역 출력
+SELECT 
+    OI.ORDERS_ITEM_PK,
+    OI.ORDERS_PK,
+    I.ITEM_PK,
+    I.ITEM_IMAGE_URL,             -- 상품 사진
+    I.ITEM_NAME,                  -- 상품명
+    OI.ORDERS_ITEM_PRICE,         -- 주문 시점 가격
+    OI.ORDERS_ITEM_QUANTITY       -- 주문 수량
+FROM ORDERS_ITEM OI
+JOIN ITEM I
+    ON OI.ITEM_PK = I.ITEM_PK
+WHERE OI.ORDERS_PK = ?           -- 조회할 주문 내역 PK
+ORDER BY OI.ORDERS_ITEM_PK;
+
+-- 주문내역에 있는 주문 상세내역들 삭제
+DELETE FROM ORDERS_ITEM
+WHERE ORDERS_PK = ?;
+
+
+
+
+
+
