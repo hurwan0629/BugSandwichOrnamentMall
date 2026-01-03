@@ -75,6 +75,7 @@ public class KakaoPayReadyAction implements Action {
 			// 즉시 구매
 			// =========================
 			if (tempCartDTO != null) {
+				System.out.println("[로그] controller.kakaopay.KakaoPayReadyAction | [즉시 구매 로직]");
 				int itemPk = tempCartDTO.getItemPk();
 				int count = tempCartDTO.getCount();
 
@@ -83,8 +84,11 @@ public class KakaoPayReadyAction implements Action {
 				itemDTO.setItemPk(itemPk);
 				itemDTO.setItemCount(count);
 				itemDTO.setCondition("ITEM_STOCK_ENOUGH");
-
+				
 				ItemDTO itemData = itemDAO.selectOne(itemDTO);
+
+				System.out.println("[로그] controller.kakaopay.KakaoPayReadyAction | [상품 재고 확인]");
+				System.out.println("[로그] controller.kakaopay.KakaoPayReadyAction | [itemDAO.selectOne(itemDTO)] - itemDTO["+itemDTO+"]");
 				if (itemDAO.selectOne(itemDTO) == null) {
 					System.out.println("[로그] 즉시 구매 재고 부족");
 
@@ -96,9 +100,11 @@ public class KakaoPayReadyAction implements Action {
 				}
 				System.out.println("[로그] 즉시 구매 재고 감소 성공");
 				itemName = itemData.getItemName(); // itemName
-
+				
 				// 2. 재고 임시 감소
 				itemDTO.setCondition("BUY_ITEM");
+				System.out.println("[로그] controller.kakaopay.KakaoPayReadyAction | [재고 일시 감소]");
+				System.out.println("[로그] controller.kakaopay.KakaoPayReadyAction | [itemDAO.update(itemDTO)] - itemDTO["+itemDTO+"]");
 				if (!itemDAO.update(itemDTO)) {
 					throw new RuntimeException("재고 선점 실패");
 				}
@@ -113,7 +119,7 @@ public class KakaoPayReadyAction implements Action {
 			} else {
 				// =========================
 				// 장바구니 구매
-				// =========================
+				// =====================ㄴ====
 				CartDTO cartDTO = new CartDTO();
 				cartDTO.setAccountPk(accountPk);
 				cartDTO.setCondition("SELECT_ALL_ACCOUNT_CART");

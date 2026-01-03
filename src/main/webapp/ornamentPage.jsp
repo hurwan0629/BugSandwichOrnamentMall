@@ -153,6 +153,7 @@
 .sold-out-img {
     filter: grayscale(60%) brightness(70%);
 }
+
 </style>
 </head>
 

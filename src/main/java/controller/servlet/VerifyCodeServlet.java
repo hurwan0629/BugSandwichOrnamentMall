@@ -25,11 +25,15 @@ public class VerifyCodeServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("[로그] controller.servlet.VerifyCodeServlet | [시작]");
 		String inputCode = request.getParameter("inputCode");
+		System.out.println("[로그] controller.servlet.VerifyCodeServlet | [사용자가 입력한 인증코드] - inputCode:["+inputCode+"]");
+		
 	    HttpSession session = request.getSession();
 	    
 	    String serverCode = (String) session.getAttribute("authCode");
-
+	    System.out.println("[로그] controller.servlet.VerifyCodeServlet | [실제 인증코드] - serverCode:["+serverCode+"]");
+	    
 	    if (serverCode != null && serverCode.equals(inputCode)) {
 	        session.removeAttribute("authCode"); // 성공 시 세션 비우기
 	        response.getWriter().write("verified");

@@ -48,14 +48,24 @@
 		var contextPath = "${pageContext.request.contextPath}";
 		console.log("Context Path from JSP: " + contextPath); // 콘솔에서 확인
 	</script>
-
+<!-- ▼▼▼모달창 cdn ▼▼▼ -->
+				<script
+					src="
+				https://cdn.jsdelivr.net/npm/sweetalert2@11.26.12/dist/sweetalert2.all.min.js
+				"></script>
+				<link
+					href="
+				https://cdn.jsdelivr.net/npm/sweetalert2@11.26.12/dist/sweetalert2.min.css
+				"
+					rel="stylesheet">
+				<!-- ▲▲▲ 모달창 cdn ▲▲▲ -->
 </head>
 
 <body>
 	<tag:header />
 
 	<!-- 회원가입 페이지 수정 부분 -->
-	<div class="container-fluid bg-light overflow-hidden py-5">
+	<div class="container-fluid overflow-hidden py-5">
 		<div class="container py-5">
 			<h1 class="row g-5 justify-content-center" data-wow-delay="0.1s">회원가입</h1>
 
@@ -190,6 +200,7 @@
 								pattern="^[a-zA-Z가-힣0-9]{3,30}$"
 								title="배송지 명은 한글, 영문 대소문자, 숫자만 포함할 수 있으며, 3~30자 이내여야 합니다.">
 							<div id="msgAddressName"></div>
+							<input type="hidden" id="finalAddressName" name="addressName">
 						</div>
 
 						<!-- 우편번호 및 주소 -->

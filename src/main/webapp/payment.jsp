@@ -52,12 +52,12 @@
 
 
   <!-- Checkout Page Start -->
-  <div class="container-fluid bg-light overflow-hidden py-5">
-    <div class="container py-5">
+  <div class="container-fluid overflow-hidden py-5 ">
+    <div class="container py-5 content item-card rounded">
 
       <!-- <form id="payment-form" action="payment.do" method="POST"> -->
       <form id="payment-form" action="kakaoPayReady.do" method="POST">
-        <div class="row g-5 align-items-stretch">
+        <div class="row g-5 align-items-stretch ">
 
           <!-- 배송지 선택 공간 시작 -->
           <div class="col-12 col-lg-6 wow fadeInUp" data-wow-delay="0.1s">

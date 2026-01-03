@@ -39,31 +39,37 @@ public class ActionFactory {
 
 	ActionFactory() {
 		this.map = new HashMap<>();
-
-		this.map.put("/cartPage.do", new CartPageAction());
-		this.map.put("/deliveryAddressListPage.do", new DeliveryAddressListPageAction());
-		this.map.put("/login.do", new LoginAction());
-		this.map.put("/loginPage.do", new LoginPageAction());
-		this.map.put("/logout.do", new LogoutAction());
+		
+		// 메인 페이지
 		this.map.put("/mainPage.do", new MainPageAction());
+		
+		// 회원 관련
+		this.map.put("/loginPage.do", new LoginPageAction());
+		this.map.put("/login.do", new LoginAction());
 		this.map.put("/myPage.do", new MyPageAction());
-		this.map.put("/myReviewListPage.do", new MyReviewListPageAction());
-		this.map.put("/orderHistoryDetailPage.do", new OrderHistoryDetailPageAction());
-		this.map.put("/orderHistoryListPage.do", new OrderHistoryListPageAction());
-		this.map.put("/ornamentDetailPage.do", new OrnamentDetailPageAction());
-		this.map.put("/ornamentListPage.do", new OrnamentListPageAction());
-		this.map.put("/payment.do", new PaymentAction());
-		this.map.put("/paymentPage.do", new PaymentPageAction());
-		this.map.put("/registDiliveryAddress.do", new RegistDeliveryAddressAction());
-		this.map.put("/registDiliveryAddressPage.do", new RegistDeliveryAddressPageAction());
-		// this.map.put("/reviewUpdatePage.do", new ReviewUpdatePageAction());
-		this.map.put("/reviewWrite.do", new ReviewWriteAction());
-		this.map.put("/reviewWritePage.do", new ReviewWritePageAction());
 		this.map.put("/signInPage.do", new SignInPageAction());
 		this.map.put("/join.do", new JoinAction());
-		this.map.put("/signOut.do", new SignOutAction());
-		this.map.put("/signOutPage.do", new SignOutPageAction());
+		this.map.put("/logout.do", new LogoutAction());
+		
+		// 마이페이지 관련
+		this.map.put("/orderHistoryListPage.do", new OrderHistoryListPageAction());
+		this.map.put("/orderHistoryDetailPage.do", new OrderHistoryDetailPageAction());
+		this.map.put("/myReviewListPage.do", new MyReviewListPageAction());
 		this.map.put("/wishlistPage.do", new WishlistPageAction());
+		this.map.put("/reviewWritePage.do", new ReviewWritePageAction());
+		this.map.put("/reviewWrite.do", new ReviewWriteAction());
+		this.map.put("/deliveryAddressListPage.do", new DeliveryAddressListPageAction());
+		this.map.put("/registDiliveryAddressPage.do", new RegistDeliveryAddressPageAction());
+		this.map.put("/registDiliveryAddress.do", new RegistDeliveryAddressAction());
+		this.map.put("/signOutPage.do", new SignOutPageAction());
+		this.map.put("/signOut.do", new SignOutAction());
+		
+		// 상품 관련
+		this.map.put("/ornamentListPage.do", new OrnamentListPageAction());
+		this.map.put("/ornamentDetailPage.do", new OrnamentDetailPageAction());
+		this.map.put("/cartPage.do", new CartPageAction());
+		this.map.put("/paymentPage.do", new PaymentPageAction());
+//		this.map.put("/payment.do", new PaymentAction());
 
 		// 카카오결제 페이지
 		this.map.put("/kakaoPayReady.do", new KakaoPayReadyAction());

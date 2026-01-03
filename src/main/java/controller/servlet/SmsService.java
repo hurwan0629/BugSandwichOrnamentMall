@@ -14,20 +14,19 @@ public class SmsService {
 
 	public SmsService() {
 		try {
+			// 키-값 받기위한 객체
 			Properties props = new Properties();
 			// 클래스 패스에서 설정 파일 로드
 			InputStream is = getClass().getClassLoader().getResourceAsStream("config.properties");
 			props.load(is);
-
+			// 특정 키에대한 값 받아오기
 			String apiKey = props.getProperty("SOLAPI_API_KEY");
 			String apiSecret = props.getProperty("SOLAPI_API_SECRET");
 			this.fromNumber = props.getProperty("SOLAPI_FROM_NUMBER");
 			
-			System.out.println("apiKey:["+apiKey+"]");
+			 System.out.println("apiKey:["+apiKey+"]");
 			
-			this.messageService = 
-					NurigoApp.INSTANCE.initialize
-					(apiKey, apiSecret, "https://api.solapi.com");
+			this.messageService = NurigoApp.INSTANCE.initialize(apiKey, apiSecret, "https://api.solapi.com");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

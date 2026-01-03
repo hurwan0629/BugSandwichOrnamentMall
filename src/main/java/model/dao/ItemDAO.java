@@ -213,33 +213,39 @@ public class ItemDAO {
 		System.out.println("[로그] ItemDAO_selectOne : data " + data);
 		return data;
 	}
-
+	
+	// ItemDAO 의 update메서드
 	public boolean update(ItemDTO itemDTO) {
 		System.out.println("[로그] ItemDAO_update_itemDTO : " + itemDTO);
 		Connection conn = JDBCUtil.connect();
 		PreparedStatement pstmt = null;
 		try {
+			// 특정 상품 itemCount개 감소시켜주기
 			if (itemDTO.getCondition().equals("BUY_ITEM")) {
 				pstmt = conn.prepareStatement(BUY_ITEM);
 				pstmt.setInt(1, itemDTO.getItemCount());
 				pstmt.setInt(2, itemDTO.getItemPk());
 			} 
+			// 회원의 장바구니에 대한 모든 상품 재고 감소시켜주기
 			else if (itemDTO.getCondition().equals("DECREASE_ITEM_STOCK_BY_CART")) {
 				pstmt = conn.prepareStatement(DECREASE_ITEM_STOCK_BY_CART);
 				pstmt.setInt(1, itemDTO.getAccountPk());
 				pstmt.setInt(2, itemDTO.getAccountPk());
 			}
+			// 결제 실패시 상품 다시 원상복구 시켜주기
 			else if (itemDTO.getCondition().equals("ROLLBACK_ITEM_STOCK")) {
 			    pstmt = conn.prepareStatement(ROLLBACK_ITEM_STOCK);
 			    pstmt.setInt(1, itemDTO.getItemCount());
 			    pstmt.setInt(2, itemDTO.getItemPk());
 			}
 			int result = pstmt.executeUpdate();
+			// 실행시 0 미만의 값 나올 시 실패처리
 			if (result < 0) {
 				return false;
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+			// 예외 발생시 로그를 통해 상태 확인
 			System.out.println("[로그] update 실패, itemDTO = " + itemDTO);
 			return false;
 		}

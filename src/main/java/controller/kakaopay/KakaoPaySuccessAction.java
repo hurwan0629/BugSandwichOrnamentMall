@@ -78,7 +78,7 @@ public class KakaoPaySuccessAction implements Action {
 				orderItemDTO.setOrderItemPrice(tempCartDTO.getItemPrice());
 				orderItemDTO.setOrderItemQuantity(tempCartDTO.getCount());
 				orderItemDTO.setCondition("INSERT_ORDERS_ITEM");
-
+				
 				if (!orderItemDAO.insert(orderItemDTO)) {
 					throw new RuntimeException("주문 상세 등록 실패");
 				}
