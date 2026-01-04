@@ -21,19 +21,6 @@ public class ItemDTO {
 	private int itemTotalCount;
 	
 	
-	
-	
-	
-	
-	
-	@Override
-	public String toString() {
-		return "ItemDTO [accountPk=" + accountPk + ", itemPk=" + itemPk + ", itemName=" + itemName + ", itemImageUrl="
-				+ itemImageUrl + ", itemContent=" + itemContent + ", itemPrice=" + itemPrice + ", itemStock="
-				+ itemStock + ", itemCount=" + itemCount + ", itemStar=" + itemStar + ", keyword=" + keyword
-				+ ", condition=" + condition + ", startItemNum=" + startItemNum + ", endItemNum=" + endItemNum
-				+ ", itemTotalCount=" + itemTotalCount + "]";
-	}
 	public int getAccountPk() {
 		return accountPk;
 	}
@@ -121,5 +108,12 @@ public class ItemDTO {
 	public void setItemTotalCount(int itemTotalCount) {
 		this.itemTotalCount = itemTotalCount;
 	}
-	
+	@Override
+	public String toString() {
+		return "ItemDTO [accountPk=" + accountPk + ", itemPk=" + itemPk + ", itemName=" + itemName + ", itemImageUrl="
+				+ itemImageUrl + ", itemContent=" + itemContent + ", itemPrice=" + itemPrice + ", itemStock="
+				+ itemStock + ", itemCount=" + itemCount + ", itemStar=" + itemStar + ", keyword=" + keyword
+				+ ", condition=" + condition + ", startItemNum=" + startItemNum + ", endItemNum=" + endItemNum
+				+ ", itemTotalCount=" + itemTotalCount + "]";
+	}
 }

@@ -15,7 +15,7 @@ $(function () {
         }
 		
 		// ️정규식 체크
-		const idRegex = /^(?=.*\d)[a-z][a-z0-9_]{3,15}$/;
+		const idRegex = /^(?=.*\d)[a-z][a-zA-Z0-9_]{3,15}$/;
 		if (!idRegex.test(userId)) {
 			
 		    $("#msgIdCheck")

@@ -21,8 +21,8 @@ $(function() {
 		}
 
 		// 번호가 바뀌면 모든 상태 초기화
-		isDuplicateChecked = true;
-		isSmsVerified = true;									//////// 여기 ////////	
+		isDuplicateChecked = false;
+		isSmsVerified = false;
 		$("#phone").css("border", "");
 		$("#smsVerifyArea").hide();
 

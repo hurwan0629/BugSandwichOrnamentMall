@@ -79,7 +79,7 @@
 
 							<div class="input-group">
 								<input type="text" class="form-control" name="accountId"
-									id="userId" required pattern="^(?=.*\d)[a-z][a-z0-9_]{3,15}$"
+									id="userId" required pattern="^(?=.*\d)[a-z][a-zA-Z0-9_]{3,15}$"
 									minlength="4" maxlength="16"
 									title="아이디는 숫자 포함 영소문자로 시작 , 영문/숫자/_만 가능 (4~16자)"
 									placeholder="아이디는 숫자 포함 영(4~16자)">
