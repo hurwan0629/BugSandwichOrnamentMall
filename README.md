@@ -94,14 +94,6 @@ SECRET_KEY_DEV=
 &nbsp;
 
 ## 🚀 버전
-- Java dynamicWebProject 4.0
-- ojdbc6.jar
-- ORACLE12
-- TOMCAT 9.0
-	   
-	     1.8 (또는 사용하신 버전)
-	
-	
 	
 |내용|버전|
 |----|------|
