@@ -63,7 +63,7 @@ SECRET_KEY_DEV=
 
 ### Frontend
 
-- HTML, CSS, JS, jQuery, Ajax, jstl과 여러 cdn
+- HTML, CSS, JS, jQuery, 비동기, jstl과 여러 cdn
 
 
 
@@ -81,7 +81,7 @@ SECRET_KEY_DEV=
 
 ## ✨ 주요 기능
 
-- **로그인/회원가입**: 회원가입 로직 - ajax를 통한 프론트에서의 여러 유효성 검사
+- **로그인/회원가입**: 회원가입 로직 - 비동기를를 통한 프론트에서의 여러 유효성 검사
 
 - **상품목록**: 페이지네이션과 별점 플러그인을 통한 UI/UX 증진
 
