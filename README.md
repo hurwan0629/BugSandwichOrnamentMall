@@ -63,7 +63,7 @@ SECRET_KEY_DEV=
 
 ### Frontend
 
-- HTML, CSS, JS, jQeury, Ajax, jstl과 여러 cdn
+- HTML, CSS, JS, jQuery, Ajax, jstl과 여러 cdn
 
 
 
@@ -121,7 +121,7 @@ SECRET_KEY_DEV=
 
 - **문제2**: 장바구니를 통한 구매와 상품페이지에서의 바로 구매 로직의 분기를 만들지 않아 작업도중 수정이 필요했음
 
-- **해결2**: 이미 장바구니 구매 로직이 만들어진 시점이라 session의 temCartDTO 를 통해 바로구매 분기를 나누어주었음
+- **해결2**: 이미 장바구니 구매 로직이 만들어진 시점이라 session의 tempCartDTO 를 통해 바로구매 분기를 나누어주었음
 
 
 
