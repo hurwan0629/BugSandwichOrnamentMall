@@ -98,8 +98,18 @@ SECRET_KEY_DEV=
 - ojdbc6.jar
 - ORACLE12
 - TOMCAT 9.0
-
-
+	   
+	     1.8 (또는 사용하신 버전)
+	
+	
+	
+|내용|버전|
+|----|------|
+|Java|Dynamic Web Project 4.0|
+|JDK|11|
+|Server|Apache Tomcat 9.0|
+|DB|Oracle 12c|
+|Driver|ojdbc6.jar|
 
 
 
@@ -117,5 +127,6 @@ SECRET_KEY_DEV=
 
 ## 📜 License
 
-![반응형 웹 템플릿](https://themewagon.com/themes/electro-bootstrap/)
+[반응형 웹 템플릿](https://themewagon.com/themes/electro-bootstrap/)
+
 
