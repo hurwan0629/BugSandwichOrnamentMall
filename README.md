@@ -1,10 +1,6 @@
 # BugSandwich - Ornably
 
-![image.png](attachment:63ac0e87-ac2c-4393-b9ed-1d3c8cda2a75:image.png)
-
-- 봉인
-    
-    ![ORNABLY](https://i.pinimg.com/736x/84/a1/56/84a156ca7db6566b341cdff0e7900f1c.jpg)
+![ORNABLY](https://i.pinimg.com/736x/84/a1/56/84a156ca7db6566b341cdff0e7900f1c.jpg)
     
 
 > 자바 동적 웹 프로젝트 파일과 TOMCAT 9.0버전을 통한 로컬 웹 서비스 구축
